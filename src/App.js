@@ -85,7 +85,13 @@ to post data to backend, and it will be passed as props to InputFrom.
       <InputForm handlePost={handlePost} />
       <div className="row row-cols-1 row-cols-md-3 g-4 m-2">
         {notes.map((note) => (
-          <NoteCard handleDelete={handleDelete} key={note._id} note={note} />
+          <NoteCard
+            setIsReload={setIsReload}
+            isReload={isReload}
+            handleDelete={handleDelete}
+            key={note._id}
+            note={note}
+          />
         ))}
       </div>
     </div>
