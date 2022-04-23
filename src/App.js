@@ -35,7 +35,16 @@ to delete a note, and it will be passed as props to NoteCard that will be trigge
  */
 
   const handleDelete = (id) => {
-    console.log("handleDelete", id);
+    // console.log("handleDelete", id);
+    const url = `http://localhost:5000/note/${id}`;
+    fetch(url, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setIsReload(!isReload);
+      });
   };
 
   /*
